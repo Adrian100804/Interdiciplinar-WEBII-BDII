@@ -39,19 +39,19 @@ CREATE TABLE jogo (
     id_genero INT NOT NULL,
     id_desenvolvedora INT NOT NULL,
 
-    CONSTRAINT fk_jogo_genero
+ CONSTRAINT fk_jogo_genero
         FOREIGN KEY (id_genero)
         REFERENCES genero(id_genero)
         ON DELETE RESTRICT
         ON UPDATE CASCADE,
 
-    CONSTRAINT fk_jogo_desenvolvedora
+CONSTRAINT fk_jogo_desenvolvedora
         FOREIGN KEY (id_desenvolvedora)
         REFERENCES desenvolvedora(id_desenvolvedora)
         ON DELETE RESTRICT
         ON UPDATE CASCADE,
 
-    CONSTRAINT chk_ano
+CONSTRAINT chk_ano
         CHECK (ano_lancamento >= 1970)
 );
 
@@ -63,19 +63,19 @@ CREATE TABLE avaliacao (
     id_usuario INT NOT NULL,
     id_jogo INT NOT NULL,
 
-    CONSTRAINT fk_avaliacao_usuario
+ CONSTRAINT fk_avaliacao_usuario
         FOREIGN KEY (id_usuario)
         REFERENCES usuario(id_usuario)
         ON DELETE CASCADE
         ON UPDATE CASCADE,
 
-    CONSTRAINT fk_avaliacao_jogo
+ CONSTRAINT fk_avaliacao_jogo
         FOREIGN KEY (id_jogo)
         REFERENCES jogo(id_jogo)
         ON DELETE CASCADE
         ON UPDATE CASCADE,
 
-    CONSTRAINT chk_nota
+CONSTRAINT chk_nota
         CHECK (nota >= 0 AND nota <= 10)
 );
 
@@ -83,15 +83,15 @@ CREATE TABLE jogo_plataforma (
     id_jogo INT NOT NULL,
     id_plataforma INT NOT NULL,
 
-    PRIMARY KEY (id_jogo, id_plataforma),
+   PRIMARY KEY (id_jogo, id_plataforma),
 
-    CONSTRAINT fk_jp_jogo
+CONSTRAINT fk_jp_jogo
         FOREIGN KEY (id_jogo)
         REFERENCES jogo(id_jogo)
         ON DELETE CASCADE
         ON UPDATE CASCADE,
 
-    CONSTRAINT fk_jp_plataforma
+CONSTRAINT fk_jp_plataforma
         FOREIGN KEY (id_plataforma)
         REFERENCES plataforma(id_plataforma)
         ON DELETE CASCADE
