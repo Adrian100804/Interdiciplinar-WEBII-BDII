@@ -1,0 +1,30 @@
+body {
+    background: #f4f6f9;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+    margin-bottom: 30px;
+}
+
+.card-home {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-weight: bold;
+}
+
+.table {
+    background: white;
+}
+
+.footer {
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
+    color: #666;
+}

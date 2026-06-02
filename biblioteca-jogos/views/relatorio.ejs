@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Relatório</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/">Biblioteca de Jogos</a>
+        <a href="/" class="btn btn-outline-light btn-sm">Voltar</a>
+    </div>
+</nav>
+
+<div class="container">
+    <h1>Relatório de Jogos</h1>
+
+    <table class="table table-bordered table-striped mt-3">
+        <thead class="table-dark">
+            <tr>
+                <th>Jogo</th>
+                <th>Gênero</th>
+                <th>Empresa</th>
+                <th>Quantidade</th>
+                <th>Média</th>
+                <th>Menor Nota</th>
+                <th>Maior Nota</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% jogos.forEach(jogo => { %>
+                <tr>
+                    <td><%= jogo.titulo %></td>
+                    <td><%= jogo.nome_genero %></td>
+                    <td><%= jogo.nome_desenvolvedora %></td>
+                    <td><%= jogo.quantidade_avaliacoes %></td>
+
+                    <td>
+                        <% if (jogo.media_avaliacao) { %>
+                            <%= Number(jogo.media_avaliacao).toFixed(1) %>
+                        <% } else { %>
+                            Sem avaliação
+                        <% } %>
+                    </td>
+
+                    <td>
+                        <% if (jogo.menor_nota) { %>
+                            <%= Number(jogo.menor_nota).toFixed(1) %>
+                        <% } else { %>
+                            -
+                        <% } %>
+                    </td>
+
+                    <td>
+                        <% if (jogo.maior_nota) { %>
+                            <%= Number(jogo.maior_nota).toFixed(1) %>
+                        <% } else { %>
+                            -
+                        <% } %>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
