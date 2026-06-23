@@ -5,5 +5,6 @@ O trabalho foi feito pelos seguinte integrantes do grupo:
 "Carlos Eduardo Gouveia"
 "Otavio Augusto Trindade"
 "Ryan Andreoli"
+"Luiz Otavio Gouvea Freire"
 
 O trabalho é uma biblioteca de gerenciamento de jogos. No site web pode-se adicionar jogos, avaliar jogos, excluir jogos, entre outras opções.
